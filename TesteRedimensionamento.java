@@ -7,13 +7,18 @@ public class TesteRedimensionamento {
     VetorDinamico v = new VetorDinamico();
     while (true){
       double oQueFazer = gerador.nextDouble();
-      if(oQueFazer <= 0.7){
-
+      if(oQueFazer <= 0.55){
+        int n = gerador.nextInt(1, 11);
+        System.out.println("Adicionar...");
+        v.adicionar(n);
       }
       else{
-
+        System.out.println("Remover...");
+        v.remover();
       }
-      Thread.sleep(5000);
+      v.exibir();
+      System.out.println("**********************************");
+      Thread.sleep(8000);
     }
   }
 }

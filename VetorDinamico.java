@@ -2,6 +2,7 @@ public class VetorDinamico{
   private int [] elementos;
   private int quantidade;
   private int capacidade;
+  public static final int LIMIAR_REDUCAO = 4;
   public VetorDinamico(){
     //ajustar a capacidade do VetorDinamico
     capacidade = 4;
@@ -34,7 +35,7 @@ public class VetorDinamico{
   public void remover(){
     if(!estaVazio()){
       quantidade--;
-      if (quantidade <= capacidade / 4)
+      if (capacidade > LIMIAR_REDUCAO && quantidade <= capacidade / 4)
         redimensionar(0.5);
     }
   }
